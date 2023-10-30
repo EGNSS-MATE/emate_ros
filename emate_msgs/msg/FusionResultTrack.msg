@@ -19,6 +19,6 @@ float64 speed                           # along track speed [m/s]
 float64 acc                             # acceleration [m/s2]
 
 emate_msgs/CI dist_ci                   # confidence interval of travelled and relative distance [m]
-emate_msgs/CI vel_speed                 # confidence interval of along track speed [m/s]
+emate_msgs/CI speed_ci                  # confidence interval of along track speed [m/s]
 
 float64 cross_track_dist                # distance between global position and track axis [m]
