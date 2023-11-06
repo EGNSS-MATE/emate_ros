@@ -5,9 +5,7 @@ uint16[10] sensor_set                   # set of used sensors
 string para_set                         # set of parameters as json string
 int16 status                            # status of algorithm
 
-uint16[] track_id                       # array of with possible track IDs
-uint16[] origin_node_id                 # array with possible node IDs which are at the start (in movement direction) of the currently possible track IDs
-uint16[] destination_node_id            # array with possible node IDs which are at the end (in movement direction) of the currently possible track IDs
+string[] track_id                       # array of with possible track IDs
 
 bool movement_direction                 # direction flag (true if driving +x, false if driving -x in body frame)
 bool orientation                        # orientation flag (true if body x is towards destination node, false when body x axis is towards origin node)
