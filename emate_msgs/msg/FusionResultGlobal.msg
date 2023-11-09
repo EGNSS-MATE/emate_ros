@@ -22,4 +22,4 @@ uint16 tracked_sats                     # number of tracked satellites
 float64 speed                           # speed [m/s]
 float64 speed_stddev                    # standard deviation of speed [m/s]
 
-bool direction                          # direction flag (true if driving +x, false if driving -x in body frame)
+bool movement_direction                 # direction flag (true if driving +x, false if driving -x in body frame)
