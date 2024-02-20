@@ -59,6 +59,7 @@ docker run -it --net=host emate_container /bin/bash
 * Fusion Result Global: [emate_msgs/FusionResultGlobal.msg](emate_msgs/msg/FusionResultGlobal.msg)
 * Fusion Result Track: [emate_msgs/FusionResultTrack.msg](emate_msgs/msg/FusionResultTrack.msg)
 * GNSS PVT: [emate_msgs/GnssPvt.msg](emate_msgs/msg/GnssPvt.msg)
+* GNSS Interference: [emate_msgs/GnssIntf.msg](emate_msgs/msg/GnssIntf.msg)
 * IMU: [emate_msgs/Imu.msg](emate_msgs/msg/Imu.msg)
 * Speedometer: [emate_msgs/Speedometer.msg](emate_msgs/msg/Speedometer.msg)
 
