@@ -19,16 +19,22 @@ mkdir -p catkin_ws/src && cd ./catkin_ws/src
 2. Clone repo into src folder and return to catkin workspace
 
 ```bash
-git clone git@github.com:EGNSS-MATE/emate_ros.git && cd -
+git clone https://github.com/EGNSS-MATE/emate_ros.git && cd -
 ```
 
-3. Compile and source workspace
+3. Install dependencies
+
+```bash
+rosdep install -y --from-paths src/emate_msgs ignore-src
+```
+
+4. Compile and source workspace
 
 ```bash
 catkin_make && source devel/setup.bash
 ```
 
-4. Test if the messages have been build successfully
+5. Test if the messages have been build successfully
 
 ```bash
 rosmsg package emate_msgs
@@ -36,19 +42,22 @@ rosmsg package emate_msgs
 
 ##### Docker :whale:
 
-1. Create directories 
+1. Create directories
+
 ```bash
 mkdir ~/git
 cd ~/git && git clone git@github.com:EGNSS-MATE/emate_ros.git 
 cd ~/git/emate_ros
 ```
 
-2. Build docker image with egnss mate ros packages inside 
+2. Build docker image with egnss mate ros packages inside
+
 ```bash
 docker build -t emate_container .
 ```
 
-3. Run container within the net of the host 
+3. Run container within the net of the host
+
 ```bash
 docker run -it --net=host emate_container /bin/bash
 ```
