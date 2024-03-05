@@ -20,6 +20,7 @@ add_message_files(
   FusionResultGlobal.msg
   FusionResultTrack.msg
   GnssPvt.msg
+  GnssIntf.msg
   Imu.msg
   Speedometer.msg
 )
