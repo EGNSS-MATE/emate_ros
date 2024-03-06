@@ -1,0 +1,4 @@
+<launch>
+    <!-- start fusion node -->
+    <node name="mock_fusion_node" pkg="emate_mock_fusion" type="mock_fusion_node.py"/>
+</launch>
