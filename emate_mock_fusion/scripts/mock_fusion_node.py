@@ -12,7 +12,6 @@ class MockFusion:
         self._algo_id = os.getenv("INPUT_ALGO_ID", None)
         if self._algo_id is None:
            print("Environvariable INPUT_ALGO_ID is not set. Use test as default.")
-        else:
            self._algo_id = "test"
 
         self._pub_global = rospy.Publisher(
