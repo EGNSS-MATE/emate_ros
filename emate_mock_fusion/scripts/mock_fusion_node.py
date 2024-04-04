@@ -34,7 +34,7 @@ class MockFusion:
         rospy.init_node("mock_fusion_node", anonymous=True)
 
         rospy.Subscriber(
-            "/gnss_asterx_01",
+            "/gnss_5",
             GnssPvt,
             self._gnss_callback,
         )
