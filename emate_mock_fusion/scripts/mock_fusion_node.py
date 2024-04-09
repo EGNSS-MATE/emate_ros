@@ -26,12 +26,16 @@ class MockFusion:
             queue_size=10,
         )
 
+    def _timer_callback(self):
+        self._write_msgs()
+
     def _gnss_callback(self, data: GnssPvt):
         self._tmp_value = data
-        self._write_msgs()
 
     def start(self):
         rospy.init_node("mock_fusion_node", anonymous=True)
+
+        rospy.Timer(rospy.Duration(1.0), self._timer_callback)
 
         rospy.Subscriber(
             "/gnss_5",
