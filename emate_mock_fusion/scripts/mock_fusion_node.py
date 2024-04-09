@@ -27,7 +27,7 @@ class MockFusion:
         )
 
     def _timer_callback(self, event):
-        print 'Timer called at ' + str(event.current_real)
+        print("Timer called at " + str(event.current_real))
         self._write_msgs()
 
     def _gnss_callback(self, data: GnssPvt):
