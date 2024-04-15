@@ -7,6 +7,8 @@
     <arg name="/topic_list_speedometer"/>
     <arg name="/topic_list_balisereader"/>
     <arg name="/algorithm_id"/>
+    <!-- set params from arguments -->
+    <param name="/algorithm_id" type="string" value="$(arg /algorithm_id)"/>
     <!-- start fusion node -->
     <node name="mock_fusion_node" pkg="emate_mock_fusion" type="mock_fusion_node.py"/>
 </launch>
