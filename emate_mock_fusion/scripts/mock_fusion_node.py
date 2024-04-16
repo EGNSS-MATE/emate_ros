@@ -1,4 +1,3 @@
-import os
 import rospy
 import numpy as np
 from emate_msgs.msg import FusionResultGlobal, FusionResultTrack
@@ -9,9 +8,11 @@ class MockFusion:
     def __init__(self):
         self._tmp_value = None
 
-        self._algo_id = os.getenv("INPUT_ALGO_ID", None)
-        if self._algo_id is None:
-           print("Environvariable INPUT_ALGO_ID is not set. Use test as default.")
+        param_name = "/algorithm_id"
+        if rospy.has_param(param_name):
+           self._algo_id = rospy.get_param(param_name)
+        else:
+           print("Argument /algorithm_id is not set. Use test as default.")
            self._algo_id = "test"
 
         self._pub_global = rospy.Publisher(
@@ -25,15 +26,20 @@ class MockFusion:
             queue_size=10,
         )
 
+    def _timer_callback(self, event):
+        print("Timer called at " + str(event.current_real))
+        self._write_msgs()
+
     def _gnss_callback(self, data: GnssPvt):
         self._tmp_value = data
-        self._write_msgs()
 
     def start(self):
         rospy.init_node("mock_fusion_node", anonymous=True)
 
+        rospy.Timer(rospy.Duration(1.0), self._timer_callback)
+
         rospy.Subscriber(
-            "/gnss_asterx_01",
+            "/gnss_5",
             GnssPvt,
             self._gnss_callback,
         )
